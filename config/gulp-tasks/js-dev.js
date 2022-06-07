@@ -1,5 +1,5 @@
 import webpack from 'webpack-stream';
-import webPackConfig from '../webpack.dev.js';
+import webPackConfig from '../webpack.prod.js';
 import TerserPlugin from 'terser-webpack-plugin';
 import * as path from 'path';
 
