@@ -56,7 +56,6 @@
   font-style: normal;
 }
 
-.about__button,
 .social-header__link,
 .phones-header__phone,
 .mail-header__mail,
@@ -847,6 +846,18 @@ body::after {
   }
 }
 
+@supports (margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+  .about__title:not(:last-child) {
+    margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+  .about__title:not(:last-child) {
+    margin-bottom: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
+  }
+}
+
 .about__text {
   max-width: 31.25rem;
   color: #ffffff;
@@ -862,44 +873,6 @@ body::after {
   .about__text {
     font-size: calc(0.75rem + 0.125 * (100vw - 20rem) / 56.875);
   }
-}
-
-@supports (margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
-  .about__text:not(:last-child) {
-    margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
-  }
-}
-
-@supports not (margin-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
-  .about__text:not(:last-child) {
-    margin-bottom: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
-  }
-}
-
-@supports (margin-top: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
-  .about__text:not(:last-child) {
-    margin-top: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
-  }
-}
-
-@supports not (margin-top: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
-  .about__text:not(:last-child) {
-    margin-top: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
-  }
-}
-
-.about__button {
-  color: #ffffff;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.about__button::before {
-  font-size: 0.9375rem;
-  margin-left: 1.25rem;
-  font-weight: 300;
 }
 
 @supports (padding-left: clamp( 0.9375rem , 0.6078296703rem  +  1.6483516484vw , 1.875rem )) {
