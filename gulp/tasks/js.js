@@ -24,7 +24,6 @@ export const js = () => {
                 test: /\.(scss|css)$/,
                 use: [
                   'style-loader',
-
                   {
                     loader: 'string-replace-loader',
                     options: {
@@ -37,8 +36,8 @@ export const js = () => {
                     loader: 'css-loader',
                     options: {
                       importLoaders: 3,
-                      sourceMap: false,
-                      modules: false,
+                      // sourceMap: false,
+                      // modules: false,
                       url: {
                         filter: (url, resourcePath) => {
                           if (url.includes('img') || url.includes('fonts')) {
@@ -52,7 +51,7 @@ export const js = () => {
                   {
                     loader: 'sass-loader',
                     options: {
-                      sourceMap: false,
+                      // sourceMap: false,
                       sassOptions: {
                         // outputStyle: 'expanded',
                         outputStyle: 'compressed',
