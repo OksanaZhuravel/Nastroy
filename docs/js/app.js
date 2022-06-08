@@ -3863,21 +3863,18 @@
             spaceBetween: 50,
             speed: 800,
             loop: true,
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+                pageUpDown: true
+            },
             autoplay: {
                 delay: 3e3,
                 disableOnInteraction: false
             },
             navigation: {
-                prevEl: ".controll__button-prev",
-                nextEl: ".controll__button-next"
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1
-                },
-                992: {
-                    slidesPerView: 2
-                }
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next"
             },
             on: {
                 init: function(swiper) {
