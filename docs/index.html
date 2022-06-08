@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220608202533">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220608215336">
 	<title>НАСТРОЙ</title>
 </head>
 
@@ -45,10 +45,10 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="about" class="menu__link">о нас</a></li>
-							<li class="menu__item"><a href="" class="menu__link">объекты</a></li>
-							<li class="menu__item"><a href="" class="menu__link">партнеры</a></li>
-							<li class="menu__item"><a href="" class="menu__link">контакты</a></li>
+							<li class="menu__item"><a href="#about" class="menu__link">о нас</a></li>
+							<li class="menu__item"><a href="#objects" class="menu__link">объекты</a></li>
+							<li class="menu__item"><a href="#partners" class="menu__link">партнеры</a></li>
+							<li class="menu__item"><a href="#contacts" class="menu__link">контакты</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -86,14 +86,11 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__objects objects">
+			<section class="page__objects objects" id="objects">
 				<div class="objects__container">
 					<h2 class="objects__subtitle">Объекты</h2>
-					<!-- Оболочка слайдера -->
 					<div class="objects__slider swiper">
-						<!-- Двигающееся часть слайдера -->
 						<div class="objects__wrapper swiper-wrapper">
-							<!-- Слайд -->
 							<div class="objects__slide swiper-slide">
 								<div class="objects__wrap">
 									<h3 class="objects__title">ЖК «Кленовые Аллеи»</h3>
@@ -298,6 +295,57 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__partners partners" id="partners">
+				<div class="partners__container">
+					<h2 class="partners__title">Наши клиенты и партнёры</h2>
+					<p class="partners__text">На протяжении всего времени мы активно сотрудничаем с ведущими застройщиками и
+						девелоперами Москвы</p>
+					<ul class="partners__list">
+
+						<li class="partners__item">
+							<a href="http://www.sd-atrium.ru/" target="_blank" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/atriym.webp" type="image/webp"><img src="img/partners/atriym.webp" alt="СД АТРИУМ"></picture>
+								</span></a>
+						</li>
+						<li class="partners__item">
+							<a href="http://tumenprom.ru/" target="_blank" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/energo.webp" type="image/webp"><img src="img/partners/energo.webp" alt="ООО «ТюменьЭнергоПром» "></picture>
+								</span></a>
+						</li>
+						<li class="partners__item">
+							<a href="#" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/rusbis.webp" type="image/webp"><img src="img/partners/rusbis.webp" alt="ООО «РусБизнесСтрой» "></picture>
+								</span></a>
+						</li>
+						<li class="partners__item">
+							<a href="https://www.paola-sk.com/ " target="_blank" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/paola.webp" type="image/webp"><img src="img/partners/paola.webp" alt="ООО «ПАОЛА-СК» "></picture>
+								</span></a>
+						</li>
+						<li class="partners__item">
+							<a href="https://www.gk-mic.ru/ " target="_blank" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/mitz.webp" type="image/webp"><img src="img/partners/mitz.png" alt="ООО УК «ГК „МИЦ“» "></picture>
+								</span></a>
+						</li>
+						<li class="partners__item">
+							<a href="http://www.atomstroyrezerv.ru/" target="_blank" class="partners__link">
+								<span class="partners__img-ibg">
+									<picture><source srcset="img/partners/atom.webp" type="image/webp"><img src="img/partners/atom.webp" alt="«АтомСтройРезерв»"></picture>
+								</span></a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="page__contacts contacts" id="contacts">
+				<div class="contacts__container">
+
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -324,7 +372,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220608202533"></script>
+	<script src="js/app.min.js?_v=20220608215336"></script>
 </body>
 
 </html>
