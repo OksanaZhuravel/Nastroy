@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220610153254">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220610210403">
 	<title>НАСТРОЙ</title>
 </head>
 
@@ -631,9 +631,25 @@
 	<div id="callback" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрыть</button>
+				<button data-close type="button" class="popup__close icon-menu"></button>
 				<div class="popup__text">
-					Будет заказать звонок
+					<form class="form__boby" id="form" data-ajax method="POST" action="sendmail.php" data-popup-message="#form-message">
+						<h1 class="form__title">Заказать звонок</h1>
+						<p class="form__text">Отправьте нам номер телефона, мы свяжемся с вами в ближайшее время</p>
+						<div class="form__item">
+							<label for="formName" class="form__label">Как к вам обращаться?*</label>
+							<input data-required id="formName" type="text" name="name" placeholder="" class="form__input" data-error="Введите Ваше Имя">
+						</div>
+						<div class="form__item">
+							<label for="formTel" class="form__label">Номер телефона*</label>
+							<input data-required id="formTel" type="tel" name="phone" placeholder="" data-error="Введите Номер Телефона" class="form__input">
+						</div>
+						<div class="form__buttons">
+							<button type="submit" class="button">Отправить номер</button>
+							<!-- <button type="reset" class="button">Очистить сообщение</button> -->
+						</div>
+						<p class="form__text">Внимание, это бесплатно! Вы не платите за звонок! </p>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -641,14 +657,57 @@
 	<div id="feedback" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content">
-				<button data-close type="button" class="popup__close">Закрыть</button>
+				<button data-close type="button" class="popup__close icon-menu"></button>
 				<div class="popup__text">
-					Консультация
+					<div class="form">
+						<form data-ajax method="POST" action="sendmail.php" class="form__boby" id="form" data-popup-message="#form-message">
+							<h1 class="form__title">Консультация</h1>
+							<p class="form__text">Отправьте нам сообщение, мы свяжемся с вами в ближайшее время</p>
+							<div class="form__item">
+								<label for="formName" class="form__label">Как к вам обращаться?*</label>
+								<input data-required id="formName" type="text" name="name" placeholder="" class="form__input" data-error="Введите Ваше Имя">
+							</div>
+							<div class="form__item">
+								<label for="formEmail" class="form__label">Электронная почта*</label>
+								<input id="formEmail" type="text" name="email" placeholder="" class="form__input">
+								<input data-required="email" autocomplete="off" type="text" name="form[]" data-error="Введен не верный E-mail" placeholder="почта" class="form__input">
+							</div>
+							<div class="form__item">
+								<label for="formTel" class="form__label">Номер телефона*</label>
+								<input data-required id="formTel" type="tel" name="phone" placeholder="" data-error="Введите Номер Телефона" class="form__input">
+							</div>
+							<div class="form__item">
+								<label for="formMessage" class="form__label">Опишите ваш вопрос</label>
+								<textarea name="message" id="formMessage" class="form__input"></textarea>
+							</div>
+							<div class="checkbox">
+								<input data-required id="c_1" checked data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="agreement">
+								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Я согласен с политикой
+										конфиденциальности сайта</span></label>
+							</div>
+							<div class="form__buttons">
+								<button type="submit" class="button">Отправить сообщение</button>
+								<!-- <button type="reset" class="button">Очистить сообщение</button> -->
+							</div>
+							<p class="form__text">Внимание, это бесплатно! Вы не платите за консультацию, смело пишите нам и
+								получайте ответы от наших специалистов</p>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220610153254"></script>
+
+	<div id="form-message" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close icon-menu"></button>
+				<div class="popup__text"> Ваша заявка отправленна.</div>
+				<div class="popup__text"> Ожидайте обратную связь от нас.</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20220610210403"></script>
 </body>
 
 </html>
