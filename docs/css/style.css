@@ -1233,15 +1233,15 @@ body::after {
   color: #ffffff;
 }
 
-@supports (font-size: clamp( 0.75rem , 0.706043956rem  +  0.2197802198vw , 0.875rem )) {
+@supports (font-size: clamp( 0.75rem , 0.6181318681rem  +  0.6593406593vw , 1.125rem )) {
   .about__text {
-    font-size: clamp( 0.75rem , 0.706043956rem  +  0.2197802198vw , 0.875rem );
+    font-size: clamp( 0.75rem , 0.6181318681rem  +  0.6593406593vw , 1.125rem );
   }
 }
 
-@supports not (font-size: clamp( 0.75rem , 0.706043956rem  +  0.2197802198vw , 0.875rem )) {
+@supports not (font-size: clamp( 0.75rem , 0.6181318681rem  +  0.6593406593vw , 1.125rem )) {
   .about__text {
-    font-size: calc(0.75rem + 0.125 * (100vw - 20rem) / 56.875);
+    font-size: calc(0.75rem + 0.375 * (100vw - 20rem) / 56.875);
   }
 }
 
