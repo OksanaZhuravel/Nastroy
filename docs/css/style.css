@@ -751,7 +751,6 @@ body::after {
 }
 
 .popup__text {
-  font-weight: 600;
   color: rgba(20, 20, 20, 0.7);
 }
 
@@ -848,11 +847,11 @@ body::after {
 }
 
 .header {
-  background-color: #b3afac;
+  background-color: #8a817c;
 }
 
 .menu-open .header {
-  background-color: #a39d9d;
+  background-color: #bcb8b1;
 }
 
 @supports (padding-bottom: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
@@ -1102,7 +1101,7 @@ body::after {
 }
 
 .footer {
-  background-color: #b3afac;
+  background-color: #bcb8b1;
   position: relative;
 }
 
@@ -1431,7 +1430,7 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #b3afac;
+  background-color: #8a817c;
   color: #ffffff;
 }
 
@@ -1511,7 +1510,7 @@ body::after {
 }
 
 .about {
-  background-color: #bdb9b2;
+  background-color: #79736f;
   position: relative;
 }
 
@@ -1565,7 +1564,7 @@ body::after {
 
 .about::before {
   content: "";
-  background-color: #b3afac;
+  background-color: #8a817c;
   position: absolute;
   right: 0;
   top: -2px;
@@ -1696,7 +1695,7 @@ body::after {
 }
 
 .objects {
-  background-color: #ada7a7;
+  background-color: #bcb8b1;
   position: relative;
 }
 
@@ -1750,7 +1749,7 @@ body::after {
 
 .objects::before {
   content: "";
-  background-color: #bdb9b2;
+  background-color: #79736f;
   position: absolute;
   right: 0;
   top: -2px;
@@ -1818,7 +1817,7 @@ body::after {
 .objects__wrap {
   padding: 1.25rem 0.625rem;
   position: relative;
-  background-color: #a39d9d;
+  background-color: #8a817c;
   display: -ms-grid;
   display: grid;
   height: 100%;
@@ -2073,7 +2072,7 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #141414;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @supports (gap: clamp( 1.875rem , 1.2156593407rem  +  3.2967032967vw , 3.75rem )) {
@@ -2204,7 +2203,7 @@ body::after {
 
 .partners::before {
   content: "";
-  background-color: #ada7a7;
+  background-color: #bcb8b1;
   position: absolute;
   right: 0;
   top: -2px;
@@ -2577,7 +2576,7 @@ body::after {
   }
 }
 
-@media (min-width: 76.875em) {
+@media (min-width: 62rem) {
   .header__body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -2602,7 +2601,7 @@ body::after {
     top: 7.5rem;
     right: -100%;
     overflow: auto;
-    background-color: #a39d9d;
+    background-color: #bcb8b1;
     padding: 1.875rem 0.9375rem;
     -webkit-transition: right 0.3s ease 0s;
     -o-transition: right 0.3s ease 0s;
@@ -2617,7 +2616,7 @@ body::after {
     height: 5rem;
     top: 0;
     right: -100%;
-    background-color: #a39d9d;
+    background-color: #bcb8b1;
   }
 
   .menu-open .menu__body {
