@@ -10,11 +10,14 @@ const srcFolder = `./src`;
 export const path = {
   build: {
     html: `${buildFolder}/`,
+    php: `${buildFolder}/`,
     js: `${buildFolder}/js/`,
     css: `${buildFolder}/css/`,
     images: `${buildFolder}/img/`,
     fonts: `${buildFolder}/fonts/`,
     files: `${buildFolder}/files/`,
+    phpmailer: `${buildFolder}/phpmailer/`,
+    php: `${buildFolder}/`,
   },
   src: {
     html: `${srcFolder}/*.html`,
@@ -26,6 +29,8 @@ export const path = {
     fonts: `${srcFolder}/fonts/*.*`,
     files: `${srcFolder}/files/**/*.*`,
     svgicons: `${srcFolder}/svgicons/*.svg`,
+    phpmailer: `${srcFolder}/componetns/phpmailer/**/*.*`,
+    php: `${srcFolder}/componetns/*.php*`,
   },
   clean: buildFolder,
   buildFolder: buildFolder,

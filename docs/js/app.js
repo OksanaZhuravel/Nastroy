@@ -664,14 +664,14 @@
                     const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
                     const formData = new FormData(form);
                     form.classList.add("_sending");
-                    const response = await fetch(formAction, {
+                    const result = await fetch(formAction, {
                         method: formMethod,
                         body: formData
                     });
-                    if (response.ok) {
-                        let responseResult = await response.json();
+                    if (result.ok) {
+                        let resultResult = await result.json();
                         form.classList.remove("_sending");
-                        formSent(form, responseResult);
+                        formSent(form, resultResult);
                     } else {
                         alert("Ошибка");
                         form.classList.remove("_sending");
