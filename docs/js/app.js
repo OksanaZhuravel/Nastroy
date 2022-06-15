@@ -539,10 +539,11 @@
     function formFieldsInit(options = {
         viewPass: false
     }) {
-        const formFields = document.querySelectorAll("input[placeholder],textarea[placeholder]");
+        const formFields = document.querySelectorAll("input[type=checkbox],input[placeholder],textarea[placeholder]");
         if (formFields.length) formFields.forEach((formField => {
             if (!formField.hasAttribute("data-placeholder-nohide")) formField.dataset.placeholder = formField.placeholder;
         }));
+        console.log(formFields);
         document.body.addEventListener("focusin", (function(e) {
             const targetElement = e.target;
             if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
@@ -591,7 +592,13 @@
                     this.addError(formRequiredItem);
                     error++;
                 } else this.removeError(formRequiredItem);
-            } else if ("checkbox" === formRequiredItem.type && !formRequiredItem.checked) {
+            } else if ("tel" === formRequiredItem.dataset.required) {
+                formRequiredItem.value = formRequiredItem.value.replace(" ", "");
+                if (this.telTest(formRequiredItem)) {
+                    this.addError(formRequiredItem);
+                    error++;
+                } else this.removeError(formRequiredItem);
+            } else if ("checkbox" === formRequiredItem.type && false === formRequiredItem.checked) {
                 this.addError(formRequiredItem);
                 error++;
             } else if (!formRequiredItem.value.trim()) {
@@ -638,6 +645,9 @@
         },
         emailTest(formRequiredItem) {
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
+        },
+        telTest(formRequiredItem) {
+            return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(formRequiredItem.value);
         }
     };
     function formSubmit(options = {

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220615143150">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220615165612">
 	<title>НАСТРОЙ</title>
 </head>
 
@@ -650,7 +650,7 @@
 						</div>
 						<div class="form__item">
 							<!-- <label for="formTel" class="form__label">Номер телефона*</label> -->
-							<input data-required type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
+							<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
 						</div>
 						<div class="form__buttons">
 							<button type="submit" class="button">Отправить номер</button>
@@ -684,14 +684,14 @@
 							</div>
 							<div class="form__item">
 								<!-- <label for="formTel" class="form__label">Номер телефона*</label> -->
-								<input data-required type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
+								<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
 							</div>
 							<div class="form__item">
 								<!-- <label for="formMessage" class="form__label">Опишите ваш вопрос</label> -->
 								<textarea name="message" class="form__input" placeholder="Опишите ваш вопрос"></textarea>
 							</div>
-							<div class="checkbox">
-								<input data-required id="c_1" checked data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="agreement">
+							<div class="checkbox form__item ">
+								<input data-required id="c_1" class="checkbox__input" type="checkbox" value="получено" checked name="agreement">
 								<label for="c_1" class="checkbox__label"><span class="checkbox__text">Даю согласие на обработку
 										персональных данных</span></label>
 							</div>
@@ -717,7 +717,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220615143150"></script>
+	<script src="js/app.min.js?_v=20220615165612"></script>
 </body>
 
 </html>
