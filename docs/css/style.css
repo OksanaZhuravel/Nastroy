@@ -9,50 +9,42 @@
 }
 
 @font-face {
-  font-family: Muller;
+  font-family: SourceSansPro;
   font-display: swap;
-  src: url("../fonts/Muller-Light.woff2") format("woff2"), url("../fonts/Muller-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Muller;
-  font-display: swap;
-  src: url("../fonts/Muller-ExtraBold.woff2") format("woff2"), url("../fonts/Muller-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Muller;
-  font-display: swap;
-  src: url("../fonts/Muller-Bold.woff2") format("woff2"), url("../fonts/Muller-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Muller;
-  font-display: swap;
-  src: url("../fonts/Muller-Regular.woff2") format("woff2"), url("../fonts/Muller-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Muller;
-  font-display: swap;
-  src: url("../fonts/Muller-Black.woff2") format("woff2"), url("../fonts/Muller-Black.woff") format("woff");
+  src: url("../fonts/SourceSansPro-Black.woff2") format("woff2"), url("../fonts/SourceSansPro-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Muller;
+  font-family: SourceSansPro;
   font-display: swap;
-  src: url("../fonts/Muller-Medium.woff2") format("woff2"), url("../fonts/Muller-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SourceSansPro-Bold.woff2") format("woff2"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SourceSansPro;
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-Light.woff2") format("woff2"), url("../fonts/SourceSansPro-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SourceSansPro;
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-Regular.woff2") format("woff2"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SourceSansPro;
+  font-display: swap;
+  src: url("../fonts/SourceSansPro-SemiBold.woff2") format("woff2"), url("../fonts/SourceSansPro-SemiBold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -141,8 +133,8 @@ body {
 
 body {
   color: #000000;
-  line-height: 1.2;
-  font-family: Muller, sans-serif;
+  line-height: 1.5;
+  font-family: "SourceSansPro", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   -ms-text-size-adjust: 100%;
@@ -155,7 +147,7 @@ body {
 input,
 button,
 textarea {
-  font-family: Muller, sans-serif;
+  font-family: "SourceSansPro", sans-serif;
   font-size: inherit;
 }
 
@@ -439,7 +431,7 @@ body::after {
   grid-template-columns: min-content 1fr;
   text-transform: uppercase;
   color: #6f6f85;
-  font-weight: 600;
+  font-weight: 900;
   margin: 0 0 1.25rem 0;
 }
 
@@ -807,7 +799,7 @@ body::after {
   text-transform: uppercase;
   color: #6f6f85;
   line-height: 1.5;
-  font-weight: 800;
+  font-weight: 900;
   margin: 0 0 1.25rem 0;
 }
 
@@ -1179,12 +1171,6 @@ body::after {
   .footer__container {
     gap: calc(0.625rem + 1.25 * (100vw - 20rem) / 56.875);
   }
-}
-
-.footer__maps {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/3;
 }
 
 .footer__copy p:not(:last-child) {
@@ -2159,7 +2145,7 @@ body::after {
 }
 
 .fraction__all {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .partners {
@@ -2411,6 +2397,12 @@ body::after {
   .footer__container {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__maps {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
   }
 
   .footer__copy {
