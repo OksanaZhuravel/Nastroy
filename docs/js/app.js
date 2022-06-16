@@ -543,7 +543,6 @@
         if (formFields.length) formFields.forEach((formField => {
             if (!formField.hasAttribute("data-placeholder-nohide")) formField.dataset.placeholder = formField.placeholder;
         }));
-        console.log(formFields);
         document.body.addEventListener("focusin", (function(e) {
             const targetElement = e.target;
             if ("INPUT" === targetElement.tagName || "TEXTAREA" === targetElement.tagName) {
