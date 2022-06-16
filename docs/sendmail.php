@@ -43,14 +43,16 @@
     //  $mail->SMTPDebug = 2;
       // Настройки вашей почты
       $mail->Host = 'ssl://smtp.mail.ru';
-      $mail->Username   = 'nastroy.test@mail.ru'; // Логин на почте
-      $mail->Password   = 'HFPpy6WFXBx6GvftWKrt'; // Пароль на почте
+      $mail->Username   = 'nfo@nastroy.moscow'; // Логин на почте
+      // $mail->Username   = 'nastroy.test@mail.ru'; // Логин на почте
+      // $mail->Password   = 'HFPpy6WFXBx6GvftWKrt'; // Пароль на почте
+      $mail->Password   = ' Yif-rsw-j3D-Vq9'; // Пароль на почте
       $mail->SMTPSecure = 'ssl';
       $mail->Port       = 465;
-      $mail->setFrom('nastroy.test@mail.ru', 'Новое с сайта'); // Адрес самой почты и имя отправителя
+      $mail->setFrom('info@nastroy.moscow', 'Новое с сайта'); // Адрес самой почты и имя отправителя
       // NASMOSKVA* пароль nastroy.test@mail.ru
       // Получатель письма
-      $mail->addAddress('nastroy.test@mail.ru');  
+      $mail->addAddress('info@nastroy.moscow');  
 
   // Отправка сообщения
   $mail->isHTML(true);
