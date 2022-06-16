@@ -32,7 +32,7 @@
 		$body.='<p> <strong>Согласие на обработку данных</strong>'.$_POST['agreement'].'</p>';
 	}
    if(trim(!empty($_POST['phone']))){
-		$body.='<p> <strong> Телефон для связи: </strong>'.$_POST['phone'].'</p>';
+		$body.='<p><strong> Телефон для связи: </strong>'.$_POST['phone'].'</p>';
 	}
   $mail = new PHPMailer();
 
@@ -43,16 +43,17 @@
     //  $mail->SMTPDebug = 2;
       // Настройки вашей почты
       $mail->Host = 'ssl://smtp.mail.ru';
-      $mail->Username   = 'nfo@nastroy.moscow'; // Логин на почте
+      $mail->Username   = 'info@nastroy.moscow'; // Логин на почте
       // $mail->Username   = 'nastroy.test@mail.ru'; // Логин на почте
       // $mail->Password   = 'HFPpy6WFXBx6GvftWKrt'; // Пароль на почте
-      $mail->Password   = ' Yif-rsw-j3D-Vq9'; // Пароль на почте
+      $mail->Password   = '1ZB0Cv3hVBhm96NNnTNT'; // Пароль на почте
       $mail->SMTPSecure = 'ssl';
       $mail->Port       = 465;
       $mail->setFrom('info@nastroy.moscow', 'Новое с сайта'); // Адрес самой почты и имя отправителя
       // NASMOSKVA* пароль nastroy.test@mail.ru
+// 3-7XuOSrztOa
       // Получатель письма
-      $mail->addAddress('info@nastroy.moscow');  
+      $mail->addAddress('info@nastroy.moscow');
 
   // Отправка сообщения
   $mail->isHTML(true);
