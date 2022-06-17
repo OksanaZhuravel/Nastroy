@@ -4263,18 +4263,14 @@
             modules: [ Navigation, Pagination, Autoplay ],
             observer: true,
             observeParents: true,
-            slidesPerView: 1,
             spaceBetween: 50,
+            watchOverflow: true,
             speed: 800,
             loop: true,
             keyboard: {
                 enabled: true,
                 onlyInViewport: true,
                 pageUpDown: true
-            },
-            autoplay: {
-                delay: 3e3,
-                disableOnInteraction: false
             },
             navigation: {
                 prevEl: ".swiper-button-prev",
