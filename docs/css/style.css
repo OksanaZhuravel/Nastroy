@@ -1438,6 +1438,7 @@ body::after {
 
 .promo {
   position: relative;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1445,9 +1446,9 @@ body::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2307,7 +2308,6 @@ body::after {
 }
 
 .partners__container {
-  min-height: 30vw;
   display: -ms-grid;
   display: grid;
 }
@@ -2341,8 +2341,9 @@ body::after {
 }
 
 .partners__text {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   max-width: 28.125rem;
 }
 
@@ -2624,6 +2625,10 @@ body::after {
     color: #000000;
   }
 
+  .promo {
+    min-height: 70vh;
+  }
+
   .about__container {
     -ms-grid-columns: 32.5rem 1fr;
     grid-template-columns: 32.5rem 1fr;
@@ -2693,6 +2698,9 @@ body::after {
   .partners__container {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    -webkit-column-gap: 6.25rem;
+       -moz-column-gap: 6.25rem;
+            column-gap: 6.25rem;
   }
 }
 
