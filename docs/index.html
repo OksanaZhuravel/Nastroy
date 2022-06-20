@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css?_v=20220620133308">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220620170619">
 	<title>НАСТРОЙ</title>
 </head>
 
@@ -42,7 +42,7 @@
 							<li class="menu__item"><a data-goto=".about" href="#" class="menu__link">о нас</a></li>
 							<li class="menu__item"><a data-goto=".objects" href="#" class="menu__link">объекты</a></li>
 							<li class="menu__item"><a data-goto=".partners" href="#" class="menu__link">партнеры</a></li>
-							<li class="menu__item"><a data-goto=".contacts" href="#" class="menu__link">контакты</a></li>
+							<li class="menu__item"><a data-goto=".footer" href="#" class="menu__link">контакты</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -65,7 +65,7 @@
 						коммерческом строительстве, в том числе со сдачей в эксплуатирующие и снабжающие организации.</p>
 				</div>
 			</section>
-			<section class="page__about about">
+			<section class="page__about about ">
 				<div class="about__container">
 					<div class="about__body">
 						<h2 class="about__title">О компании</h2>
@@ -99,11 +99,6 @@
 									эксплуатацию индивидуальных тепловых пунктов (ИТП)</p>
 							</li>
 						</ul>
-						<!-- <p class="about__text">Мы занимаемся общедомовыми работами по установки оборудования, делаем разводку
-                трубопроводов по подвалам
-                и подъездам, квартирам, любое освещение домов, пожарную сигнализацию, внутридворовые сети
-                электроснабжения, водоснабжения, канализации, теплоснабжения и отопление</p> -->
-						<!-- <a href="" class="about__button button icon-arrow"><span>Подробнее</span></a> -->
 					</div>
 					<div class="about__image">
 						<span class="about__item-image-ibg about__item-image-ibg--contain">
@@ -125,7 +120,6 @@
 								<button type="button" class="controll__button controll__button-next swiper-button-next icon-arrow"></button>
 							</div>
 						</div>
-
 						<div class="objects__wrapper swiper-wrapper">
 							<div class="objects__slide swiper-slide">
 								<div class="objects__wrap">
@@ -562,7 +556,6 @@
 									<picture><source srcset="img/partners/ds.webp" type="image/webp"><img src="img/partners/ds.png" alt="ООО Домстрой-развитие" width="80" height="80"></picture>
 								</span></a>
 						</li>
-
 						<li class="partners__item">
 							<a href="http://www.sd-atrium.ru/" target="_blank" class="partners__link">
 								<span class="partners__img-ibg partners__img-ibg--contain">
@@ -575,14 +568,12 @@
 									<picture><source srcset="img/partners/energo.webp" type="image/webp"><img src="img/partners/energo.webp" alt="ООО «ТюменьЭнергоПром»" width="80" height="80"></picture>
 								</span></a>
 						</li>
-
 						<li class="partners__item">
 							<a href="https://www.paola-sk.com/ " target="_blank" class="partners__link">
 								<span class="partners__img-ibg partners__img-ibg--contain">
 									<picture><source srcset="img/partners/paola.webp" type="image/webp"><img src="img/partners/paola.webp" alt="ООО «ПАОЛА-СК» " width="80" height="80"></picture>
 								</span></a>
 						</li>
-
 						<li class="partners__item">
 							<a href="http://www.atomstroyrezerv.ru/" target="_blank" class="partners__link">
 								<span class="partners__img-ibg partners__img-ibg--contain">
@@ -595,7 +586,6 @@
 									<picture><source srcset="img/partners/kompleksstroy.webp" type="image/webp"><img src="img/partners/kompleksstroy.png" alt="КомплексСтрой" width="80" height="80"></picture>
 								</span></a>
 						</li>
-
 						<li class="partners__item">
 							<a href="http://vsustroy.ru/" target="_blank" class="partners__link">
 								<span class="partners__img-ibg partners__img-ibg--contain">
@@ -610,11 +600,8 @@
 					</ul>
 				</div>
 			</section>
-			<div data-goto=".header__body" class="scroll">
-				<a href="#" class="scroll__link"></a>
-			</div>
 		</main>
-		<footer class="footer">
+		<footer class="footer" data-sticky>
 			<div class="footer__container">
 				<h2 class=" footer__title">Контакты</h2>
 				<div class=" footer__logo logo-footer">
@@ -639,8 +626,6 @@
 						<li class="contacts__item"><a href="mailto:info@nastroy.moscow" class="contacts__link icon-mail">info@nastroy.moscow</a>
 						</li>
 						<li class="contacts__item requisites">
-
-
 							<div data-spollers="767.98" class="spollers requisites__spoller">
 								<div class="spollers__item requisites__items">
 									<button type="button" data-spoller class="spollers__title requisites__title icon-arrow">Реквизиты:</button>
@@ -675,6 +660,9 @@
 					<p>Все права защищены</p>
 				</div>
 			</div>
+			<div data-goto=".header__body" data-sticky-item class="scroll">
+				<a href="#" class="scroll__link"></a>
+			</div>
 		</footer>
 	</div>
 	<div id="callback" aria-hidden="true" class="popup">
@@ -689,10 +677,10 @@
 						<p class="form__text">Отправьте нам номер телефона.</p>
 						<p class="form__text">Мы свяжемся с вами в ближайшее время</p>
 						<div class="form__item">
-							<input data-required type="text" name="name" placeholder="Как к вам обращаться?" class="form__input" data-error="Введите Ваше Имя">
+							<input data-required type="text" name="name" placeholder="Как к вам обращаться?*" class="form__input" data-error="Введите Ваше Имя">
 						</div>
 						<div class="form__item">
-							<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
+							<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99*" data-error="Введите Номер Телефона" class="form__input">
 						</div>
 						<div class="form__buttons">
 							<button type="submit" class="button">Отправить номер</button>
@@ -717,13 +705,13 @@
 							<p class="form__text">Отправьте нам сообщение.</p>
 							<p class="form__text">Мы свяжемся с вами в ближайшее время.</p>
 							<div class="form__item">
-								<input data-required type="text" name="name" placeholder="Как к вам обращаться?" class="form__input" data-error="Введите Ваше Имя">
+								<input data-required type="text" name="name" placeholder="Как к вам обращаться?*" class="form__input" data-error="Введите Ваше Имя">
 							</div>
 							<div class="form__item">
-								<input data-required="email" type="text" name="email" placeholder="Электронная почта" class="form__input" data-error="Введите Вашу Почту">
+								<input data-required="email" type="text" name="email" placeholder="Электронная почта*" class="form__input" data-error="Введите Вашу Почту">
 							</div>
 							<div class="form__item">
-								<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99" data-error="Введите Номер Телефона" class="form__input">
+								<input data-required="tel" type="tel" name="phone" placeholder="+7 999 999 99 99*" data-error="Введите Номер Телефона" class="form__input">
 							</div>
 							<div class="form__item">
 								<textarea name="message" class="form__input" placeholder="Опишите ваш вопрос"></textarea>
@@ -755,7 +743,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20220620133308"></script>
+	<script src="js/app.min.js?_v=20220620170619"></script>
 </body>
 
 </html>

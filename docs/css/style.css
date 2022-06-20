@@ -291,8 +291,8 @@ input[type=radio].visually-hidden {
 }
 
 .checkbox__input._form-error + .checkbox__label:before {
-  -webkit-box-shadow: 0 0 15px #4d2346;
-          box-shadow: 0 0 15px #4d2346;
+  -webkit-box-shadow: 0 0 15px red;
+          box-shadow: 0 0 15px red;
 }
 
 .checkbox__label {
@@ -467,6 +467,10 @@ body::after {
   visibility: visible;
 }
 
+[data-sticky] {
+  position: relative;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -487,11 +491,10 @@ body::after {
 }
 
 .scroll {
-  display: none;
   position: fixed;
   z-index: 10;
-  bottom: 0.3125rem;
-  left: 0.0625rem;
+  bottom: -250px;
+  left: 5px;
   background: url("../img/icon/scroll.svg") center/cover no-repeat;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
@@ -500,34 +503,34 @@ body::after {
   transition: transform 1s, -webkit-transform 1s;
 }
 
-@supports (height: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+@supports (height: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
   .scroll {
-    height: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
+    height: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
   }
 }
 
-@supports not (height: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+@supports not (height: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
   .scroll {
-    height: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
+    height: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
   }
 }
 
-@supports (width: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+@supports (width: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
   .scroll {
-    width: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
+    width: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem );
   }
 }
 
-@supports not (width: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
+@supports not (width: clamp( 1.875rem , 1.5453296703rem  +  1.6483516484vw , 2.8125rem )) {
   .scroll {
-    width: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
+    width: calc(1.875rem + 0.9375 * (100vw - 20rem) / 56.875);
   }
 }
 
 .scroll:hover {
-  -webkit-transform: translateY(-10px);
-      -ms-transform: translateY(-10px);
-          transform: translateY(-10px);
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
 }
 
 .form {
@@ -631,7 +634,7 @@ body::after {
 }
 
 .form__item .form__error {
-  color: #a32e91;
+  color: red;
   font-size: 1.125rem;
   padding: 0.3125rem 1.25rem;
 }
@@ -1069,6 +1072,10 @@ body::after {
   .menu__link {
     font-size: calc(1.75rem + -0.125 * (100vw - 20rem) / 42);
   }
+}
+
+.menu__link ._navigator-active {
+  color: #4d2346;
 }
 
 .header-footer {
