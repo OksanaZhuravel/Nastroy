@@ -1102,9 +1102,6 @@ body::after {
 
 .footer {
   background-color: #788b9e;
-  background: -webkit-gradient(linear, left bottom, left top, from(rgb(110, 125, 140)), color-stop(rgb(122, 133, 144)), to(rgb(242, 242, 242)));
-  background: -o-linear-gradient(bottom, rgb(110, 125, 140), rgb(122, 133, 144), rgb(242, 242, 242));
-  background: linear-gradient(0deg, rgb(110, 125, 140), rgb(122, 133, 144), rgb(242, 242, 242));
   position: relative;
 }
 
@@ -1309,27 +1306,27 @@ body::after {
   display: block;
 }
 
-@supports (width: clamp( 7.5rem , 3.543956044rem  +  19.7802197802vw , 18.75rem )) {
+@supports (width: clamp( 15rem , 13.6813186813rem  +  6.5934065934vw , 18.75rem )) {
   .logo-footer__link img {
-    width: clamp( 7.5rem , 3.543956044rem  +  19.7802197802vw , 18.75rem );
+    width: clamp( 15rem , 13.6813186813rem  +  6.5934065934vw , 18.75rem );
   }
 }
 
-@supports not (width: clamp( 7.5rem , 3.543956044rem  +  19.7802197802vw , 18.75rem )) {
+@supports not (width: clamp( 15rem , 13.6813186813rem  +  6.5934065934vw , 18.75rem )) {
   .logo-footer__link img {
-    width: calc(7.5rem + 11.25 * (100vw - 20rem) / 56.875);
+    width: calc(15rem + 3.75 * (100vw - 20rem) / 56.875);
   }
 }
 
-@supports (height: clamp( 2.5rem , 1.1813186813rem  +  6.5934065934vw , 6.25rem )) {
+@supports (height: clamp( 5rem , 4.5604395604rem  +  2.1978021978vw , 6.25rem )) {
   .logo-footer__link img {
-    height: clamp( 2.5rem , 1.1813186813rem  +  6.5934065934vw , 6.25rem );
+    height: clamp( 5rem , 4.5604395604rem  +  2.1978021978vw , 6.25rem );
   }
 }
 
-@supports not (height: clamp( 2.5rem , 1.1813186813rem  +  6.5934065934vw , 6.25rem )) {
+@supports not (height: clamp( 5rem , 4.5604395604rem  +  2.1978021978vw , 6.25rem )) {
   .logo-footer__link img {
-    height: calc(2.5rem + 3.75 * (100vw - 20rem) / 56.875);
+    height: calc(5rem + 1.25 * (100vw - 20rem) / 56.875);
   }
 }
 
