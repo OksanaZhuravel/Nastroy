@@ -1,70 +1,56 @@
 <?php
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-  use PHPMailer\PHPMailer\SMTP;
 
-  require 'phpmailer/src/Exception.php';
+	require 'phpmailer/src/Exception.php';
 	require 'phpmailer/src/PHPMailer.php';
-  require 'phpmailer/src/SMTP.php';
-
-  // $name = $_POST['name'];
-  // $email = $_POST['email'];
-  // $text = $_POST['message'];
-  // $check = $_POST['agreement'];
-  // $phone = $_POST['phone'];
 
   $title = "С сайта";
   $body = '<h2>Перезвони или напиши мне!</h2>';
-  // $body = "
-  // <h2>Перезвони или напиши мне</h2>
 
-  // ";
   if(trim(!empty($_POST['name']))){
-		$body.='<p> <strong> Имя: </strong>'.$_POST['name'].'</p>';
-	}
-  if(trim(!empty($_POST['email']))){
-		$body.='<p> <strong> Почта: </strong>'.$_POST['email'].'</p>';
-	} 
-  if(trim(!empty($_POST['message']))){
-		$body.='<p> <strong> Сообщение: </strong>'.$_POST['message'].'</p>';
-	}
-   if(trim(!empty($_POST['agreement']))){
-		$body.='<p> <strong>Согласие на обработку данных</strong>'.$_POST['agreement'].'</p>';
-	}
-   if(trim(!empty($_POST['phone']))){
-		$body.='<p><strong> Телефон для связи: </strong>'.$_POST['phone'].'</p>';
-	}
-  $mail = new PHPMailer();
+    $body.='<p> <strong> Имя: </strong>'.$_POST['name'].'</p>';
+}
+if(trim(!empty($_POST['email']))){
+    $body.='<p> <strong> Почта: </strong>'.$_POST['email'].'</p>';
+}
+if(trim(!empty($_POST['message']))){
+    $body.='<p> <strong> Сообщение: </strong>'.$_POST['message'].'</p>';
+}
+if(trim(!empty($_POST['agreement']))){
+    $body.='<p> <strong>Согласие на обработку данных - </strong>'.$_POST['agreement'].'</p>';
+}
+if(trim(!empty($_POST['phone']))){
+    $body.='<p><strong> Телефон для связи: </strong>'.$_POST['phone'].'</p>';
+}
 
-      $mail->isSMTP();   
-      $mail->CharSet = "UTF-8";
-      $mail->SMTPAuth = true;
-      // $mail->SMTPDebug = 0;
-    //  $mail->SMTPDebug = 2;
-      // Настройки вашей почты
-      $mail->Host = 'ssl://smtp.mail.ru';
-      $mail->Username   = 'info@nastroy.moscow'; // Логин на почте
-      // $mail->Username   = 'nastroy.test@mail.ru'; // Логин на почте
-      // $mail->Password   = 'HFPpy6WFXBx6GvftWKrt'; // Пароль на почте
-      $mail->Password   = '1ZB0Cv3hVBhm96NNnTNT'; // Пароль на почте
-      $mail->SMTPSecure = 'ssl';
-      $mail->Port       = 465;
-      $mail->setFrom('info@nastroy.moscow', 'Новое с сайта'); // Адрес самой почты и имя отправителя
-      // NASMOSKVA* пароль nastroy.test@mail.ru
-// 3-7XuOSrztOa
-      // Получатель письма
-      $mail->addAddress('info@nastroy.moscow');
 
-  // Отправка сообщения
+	$mail = new PHPMailer(true);
+	$mail->CharSet = 'UTF-8';
+	$mail->setLanguage('ru', 'phpmailer/language/');
+	$mail->IsHTML(true);
+
+	//От кого письмо
+	$mail->setFrom('info@nastroy.moscow', 'Сообщение с сайта'); // Указать нужный E-mail
+	//Кому отправить
+	$mail->addAddress('info@nastroy.info'); // Указать нужный E-mail
+	
+
+
   $mail->isHTML(true);
   $mail->Subject = $title;
   $mail->Body = $body;
-  $mail->msgHTML($body);
-  // Проверяем отравленность сообщения
 
-  if ($mail->send()) {$result = "Данные отправлены!";}
-  else {$result = "Ошибка";}
 
-  // Отображение результата
-  echo json_encode(["result" => $result]);
+	//Отправляем
+	if (!$mail->send()) {
+		$message = 'Ошибка';
+	} else {
+		$message = 'Данные отправлены!';
+	}
+
+	$result = ['message' => $message];
+
+	header('Content-type: application/json');
+	echo json_encode($result);
 ?>

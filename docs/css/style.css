@@ -222,13 +222,6 @@ input[type=radio].visually-hidden {
           flex: 1 1 auto;
 }
 
-/*
-(i) Стили будут применяться ко 
-всем классам содержащим *__container
-Например header__container, main__container и т.д.
-Снипет (HTML): cnt
-*/
-
 [class*=__container] {
   max-width: 75rem;
   -webkit-box-sizing: content-box;
@@ -460,7 +453,6 @@ body::after {
   background-color: #eee;
   padding: 1.875rem;
   width: 100%;
-  border-radius: 20px;
 }
 
 .lock .popup__content {
@@ -485,7 +477,7 @@ body::after {
      object-fit: cover;
 }
 
-[class*=-ibg--contain] img {
+[class*=-ibg-contain] img {
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -535,6 +527,31 @@ body::after {
 
 .form {
   margin: 0 auto;
+}
+
+.form__boby {
+  position: relative;
+}
+
+.form__boby::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(96, 110, 140, 0.3);
+  background: url("../img/icon/loader.svg") center/90% no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.form__boby._sending::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .form__title {
@@ -593,44 +610,28 @@ body::after {
   color: rgba(0, 0, 0, 0.5);
 }
 
-@supports (font-size: clamp( 0.875rem , 0.7431318681rem  +  0.6593406593vw , 1.25rem )) {
+@supports (font-size: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
   .form__text {
-    font-size: clamp( 0.875rem , 0.7431318681rem  +  0.6593406593vw , 1.25rem );
+    font-size: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem );
   }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.7431318681rem  +  0.6593406593vw , 1.25rem )) {
+@supports not (font-size: clamp( 0.875rem , 0.831043956rem  +  0.2197802198vw , 1rem )) {
   .form__text {
-    font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 56.875);
+    font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 56.875);
   }
 }
 
-@supports (margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem )) {
-  .form__text:not(:last-child) {
-    margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem );
-  }
-}
-
-@supports not (margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem )) {
-  .form__text:not(:last-child) {
-    margin-bottom: calc(0.625rem + 0.625 * (100vw - 20rem) / 56.875);
-  }
+.form__text:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 .form__text-subtitle {
   text-align: center;
 }
 
-@supports (margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem )) {
-  .form__item:not(:last-child) {
-    margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem );
-  }
-}
-
-@supports not (margin-bottom: clamp( 0.625rem , 0.4052197802rem  +  1.0989010989vw , 1.25rem )) {
-  .form__item:not(:last-child) {
-    margin-bottom: calc(0.625rem + 0.625 * (100vw - 20rem) / 56.875);
-  }
+.form__item:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 .form__item .form__error {
@@ -689,13 +690,13 @@ body::after {
 }
 
 .form textarea.form__input {
-  min-height: 7.5rem;
+  min-height: 6.25rem;
   resize: vertical;
   padding: 1.25rem;
 }
 
 .form__buttons {
-  padding: 1.25rem 0;
+  padding: 0.9375rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -786,30 +787,6 @@ body::after {
 
 .popup__text:not(:last-child) {
   margin-bottom: 0.9375rem;
-}
-
-.popup__text .form__boby {
-  position: relative;
-}
-
-.popup__text .form__boby::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(77, 35, 70, 0.8);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.popup__text .form__boby::after._sending {
-  opacity: 1;
-  visibility: visible;
 }
 
 .popup__title {
@@ -918,6 +895,10 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.logo-header {
+  padding-bottom: 0.9375rem;
 }
 
 .logo-header__link img {
@@ -1108,6 +1089,7 @@ body::after {
 }
 
 .footer {
+  color: #ffffff;
   background-color: #788b9e;
   position: relative;
 }
@@ -1158,6 +1140,7 @@ body::after {
 }
 
 .footer__title {
+  color: #000000;
   text-shadow: 5px 10px 4px rgba(154, 154, 167, 0.81);
 }
 
@@ -1248,7 +1231,7 @@ body::after {
 }
 
 .contacts__text {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   -ms-flex-item-align: end;
       align-self: flex-end;
   max-width: 28.125rem;
@@ -1355,7 +1338,7 @@ body::after {
 }
 
 .requisites__title {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @supports (font-size: clamp( 0.875rem , 0.6991758242rem  +  0.8791208791vw , 1.375rem )) {
@@ -1534,9 +1517,6 @@ body::after {
 
 .about {
   background-color: #475f76;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(28%, rgb(242, 242, 242)), color-stop(rgb(110, 125, 140)), to(rgb(71, 95, 118)));
-  background: -o-linear-gradient(bottom, rgb(242, 242, 242) 28%, rgb(110, 125, 140), rgb(71, 95, 118));
-  background: linear-gradient(0deg, rgb(242, 242, 242) 28%, rgb(110, 125, 140), rgb(71, 95, 118));
   position: relative;
 }
 
@@ -1707,7 +1687,7 @@ body::after {
 }
 
 .about__item::before {
-  content: "-";
+  content: "–";
   position: absolute;
   left: 0;
   top: -0.125rem;
@@ -1775,9 +1755,9 @@ body::after {
 
 .objects {
   background-color: #f2f2f2;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(28%, rgb(110, 125, 140)), to(rgb(242, 242, 242)));
-  background: -o-linear-gradient(bottom, rgb(110, 125, 140) 28%, rgb(242, 242, 242));
-  background: linear-gradient(0deg, rgb(110, 125, 140) 28%, rgb(242, 242, 242));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, rgb(110, 125, 140)), to(rgb(242, 242, 242)));
+  background: -o-linear-gradient(bottom, rgb(110, 125, 140) 5%, rgb(242, 242, 242));
+  background: linear-gradient(0deg, rgb(110, 125, 140) 5%, rgb(242, 242, 242));
   position: relative;
 }
 
@@ -1882,8 +1862,8 @@ body::after {
   display: -ms-grid;
   display: grid;
   height: 100%;
-  -webkit-box-shadow: 5px -3px 13px rgba(0, 0, 0, 0.5);
-          box-shadow: 5px -3px 13px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 0 6px rgba(0, 0, 0, 0.5);
   -webkit-transition: -webkit-box-shadow 0.3s ease 0s;
   transition: -webkit-box-shadow 0.3s ease 0s;
   -o-transition: box-shadow 0.3s ease 0s;
@@ -1909,15 +1889,15 @@ body::after {
   font-weight: 700;
 }
 
-@supports (font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
+@supports (font-size: clamp( 1rem , 0.4725274725rem  +  2.6373626374vw , 2.5rem )) {
   .objects__title {
-    font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem );
+    font-size: clamp( 1rem , 0.4725274725rem  +  2.6373626374vw , 2.5rem );
   }
 }
 
-@supports not (font-size: clamp( 1.25rem , 0.8104395604rem  +  2.1978021978vw , 2.5rem )) {
+@supports not (font-size: clamp( 1rem , 0.4725274725rem  +  2.6373626374vw , 2.5rem )) {
   .objects__title {
-    font-size: calc(1.25rem + 1.25 * (100vw - 20rem) / 56.875);
+    font-size: calc(1rem + 1.5 * (100vw - 20rem) / 56.875);
   }
 }
 
@@ -1966,6 +1946,10 @@ body::after {
   padding-bottom: 100%;
 }
 
+.objects__inner {
+  padding: 0 0.625rem;
+}
+
 .objects__customer {
   color: #071844;
   font-size: 1.25rem;
@@ -1982,6 +1966,10 @@ body::after {
   .objects__customer:not(:last-child) {
     margin-bottom: calc(0.9375rem + 0.625 * (100vw - 20rem) / 56.875);
   }
+}
+
+.objects__body {
+  padding: 0 0.625rem;
 }
 
 .objects__work {
@@ -2228,22 +2216,30 @@ body::after {
           align-items: center;
 }
 
-@supports (gap: clamp( 0.625rem , -0.2541208791rem  +  4.3956043956vw , 3.125rem )) {
+@supports (gap: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
   .controll__buttons {
-    gap: clamp( 0.625rem , -0.2541208791rem  +  4.3956043956vw , 3.125rem );
+    gap: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem );
   }
 }
 
-@supports not (gap: clamp( 0.625rem , -0.2541208791rem  +  4.3956043956vw , 3.125rem )) {
+@supports not (gap: clamp( 1.875rem , 1.4354395604rem  +  2.1978021978vw , 3.125rem )) {
   .controll__buttons {
-    gap: calc(0.625rem + 2.5 * (100vw - 20rem) / 56.875);
+    gap: calc(1.875rem + 1.25 * (100vw - 20rem) / 56.875);
   }
 }
 
 .controll__button {
-  height: 1.875rem;
-  width: 2.5rem;
-  border-radius: 0.3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2.5rem;
+  width: 3.125rem;
   background-color: rgba(96, 110, 140, 0.3);
 }
 
@@ -2511,6 +2507,10 @@ body::after {
             justify-content: space-evenly;
   }
 
+  .logo-header {
+    padding-bottom: 0;
+  }
+
   .phones-header__item {
     margin: 0 0 0.625rem 0;
   }
@@ -2658,13 +2658,7 @@ body::after {
   }
 
   .social-footer__link::before {
-    color: #000000;
-  }
-
-  .about {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(28%, rgb(71, 95, 118)), color-stop(rgb(110, 125, 140)), to(rgb(242, 242, 242)));
-    background: -o-linear-gradient(bottom, rgb(71, 95, 118) 28%, rgb(110, 125, 140), rgb(242, 242, 242));
-    background: linear-gradient(0deg, rgb(71, 95, 118) 28%, rgb(110, 125, 140), rgb(242, 242, 242));
+    color: #ffffff;
   }
 
   .about__container {
@@ -2787,7 +2781,7 @@ body::after {
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 7.5rem;
+    top: 8.75rem;
     right: -100%;
     overflow: auto;
     background-color: #788b9e;
@@ -2944,6 +2938,7 @@ body::after {
 @media (max-width: 61.99875em) and (min-width: 47.99875em) {
   .menu__body {
     padding: 1.875rem 3.125rem;
+    top: 6.875rem;
   }
 }
 
@@ -3060,8 +3055,8 @@ body::after {
   }
 
   .objects__wrap:hover {
-    -webkit-box-shadow: 5px -3px 13px rgba(0, 0, 0, 0.3);
-            box-shadow: 5px -3px 13px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 0 6px rgba(0, 0, 0, 0.3);
   }
 
   .customer__value:hover {

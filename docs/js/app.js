@@ -349,7 +349,7 @@
                         this._selectorOpen = true;
                         this.open();
                         return;
-                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+                    } else this.popupLogging(`не заполнен атрибут у ${buttonOpen.classList}`);
                     return;
                 }
                 const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
@@ -435,7 +435,7 @@
                         }
                     }));
                     this.popupLogging(`Открыл попап`);
-                } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+                } else this.popupLogging(`такого попапа нет.Проверьте корректность ввода. `);
             }
         }
         close(selectorValue) {
@@ -646,7 +646,7 @@
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
         },
         telTest(formRequiredItem) {
-            return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(formRequiredItem.value);
+            return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(formRequiredItem.value);
         }
     };
     function formSubmit(options = {
@@ -4484,7 +4484,6 @@
     };
     const da = new DynamicAdapt("max");
     da.init();
-    window["FLS"] = true;
     isWebp();
     menuInit();
     spollers();
